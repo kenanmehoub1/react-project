@@ -1,21 +1,23 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
+import axios from "axios";
+
+const API_URL = import.meta.env.VITE_API_URL;
 
 function CreateComponent() {
   const [formData, setFormData] = useState({
-    title: '',
-    description: '',
-    image: null
+    title: "",
+    description: "",
+    image: null,
   });
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
-    if (name === 'image') {
-      setFormData({ ...formData, image: files[0] });
-    } else {
-      setFormData({ ...formData, [name]: value });
-    }
+
+    setFormData((previousData) => ({
+      ...previousData,
+      [name]: name === "image" ? files?.[0] || null : value,
+    }));
   };
 
   const handleSubmit = async (e) => {
@@ -23,21 +25,23 @@ function CreateComponent() {
     setLoading(true);
 
     const data = new FormData();
-    data.append('title', formData.title);
-    data.append('description', formData.description);
-    data.append('image', formData.image);
+    data.append("title", formData.title);
+    data.append("description", formData.description);
+
+    if (formData.image) {
+      data.append("image", formData.image);
+    }
 
     try {
-      await axios.post('http://localhost:8000/api/products', data, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      });
-      alert('Product added successfully');
-      setFormData({ title: '', description: '', image: null });
-      window.location.href = '/list';
-    } catch (err) {
-      alert('Failed to add product');
+      await axios.post(`${API_URL}/api/products`, data);
+
+      alert("Product added successfully");
+      setFormData({ title: "", description: "", image: null });
+      e.target.reset();
+      window.location.href = "/list";
+    } catch (error) {
+      console.error("Product creation failed:", error);
+      alert("Failed to add product");
     } finally {
       setLoading(false);
     }
@@ -46,31 +50,41 @@ function CreateComponent() {
   return (
     <div>
       <h2>Create Product</h2>
-      <form onSubmit={handleSubmit} style={{ maxWidth: '400px', margin: '0 auto' }}>
-        <div style={{ marginBottom: '10px' }}>
-          <label>Title:</label>
+
+      <form
+        onSubmit={handleSubmit}
+        encType="multipart/form-data"
+        style={{ maxWidth: "400px", margin: "0 auto" }}
+      >
+        <div style={{ marginBottom: "10px" }}>
+          <label htmlFor="title">Title:</label>
           <input
+            id="title"
             type="text"
             name="title"
             value={formData.title}
             onChange={handleChange}
             required
-            style={{ width: '100%', padding: '8px' }}
+            style={{ width: "100%", padding: "8px" }}
           />
         </div>
-        <div style={{ marginBottom: '10px' }}>
-          <label>Description:</label>
+
+        <div style={{ marginBottom: "10px" }}>
+          <label htmlFor="description">Description:</label>
           <textarea
+            id="description"
             name="description"
             value={formData.description}
             onChange={handleChange}
             required
-            style={{ width: '100%', padding: '8px', height: '100px' }}
+            style={{ width: "100%", padding: "8px", height: "100px" }}
           />
         </div>
-        <div style={{ marginBottom: '10px' }}>
-          <label>Image:</label>
+
+        <div style={{ marginBottom: "10px" }}>
+          <label htmlFor="image">Image:</label>
           <input
+            id="image"
             type="file"
             name="image"
             onChange={handleChange}
@@ -78,8 +92,13 @@ function CreateComponent() {
             accept="image/*"
           />
         </div>
-        <button type="submit" disabled={loading} style={{ padding: '10px 20px' }}>
-          {loading ? 'Adding...' : 'Add Product'}
+
+        <button
+          type="submit"
+          disabled={loading}
+          style={{ padding: "10px 20px" }}
+        >
+          {loading ? "Adding..." : "Add Product"}
         </button>
       </form>
     </div>
