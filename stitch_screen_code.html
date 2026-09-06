@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html class="light" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-low": "#f3f4f5",
+                    "on-secondary-fixed": "#001f2a",
+                    "on-secondary-fixed-variant": "#2e4b57",
+                    "error-container": "#ffdad6",
+                    "inverse-on-surface": "#f0f1f2",
+                    "on-primary": "#ffffff",
+                    "secondary": "#466270",
+                    "primary-container": "#2273d9",
+                    "surface-container-high": "#e7e8e9",
+                    "outline-variant": "#c1c6d7",
+                    "tertiary-container": "#008091",
+                    "primary-fixed": "#d7e3ff",
+                    "on-surface-variant": "#414754",
+                    "on-primary-fixed": "#001b3e",
+                    "on-primary-container": "#fefcff",
+                    "on-surface": "#191c1d",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-container": "#4a6774",
+                    "surface-tint": "#005cba",
+                    "on-primary-fixed-variant": "#00458e",
+                    "inverse-surface": "#2e3132",
+                    "primary": "#005ab5",
+                    "on-tertiary-fixed-variant": "#004e59",
+                    "inverse-primary": "#aac7ff",
+                    "error": "#ba1a1a",
+                    "on-error": "#ffffff",
+                    "background": "#f8f9fa",
+                    "on-tertiary-container": "#f8fdff",
+                    "secondary-fixed": "#c9e7f7",
+                    "on-background": "#191c1d",
+                    "surface-dim": "#d9dadb",
+                    "surface-bright": "#f8f9fa",
+                    "surface": "#f8f9fa",
+                    "primary-fixed-dim": "#aac7ff",
+                    "secondary-fixed-dim": "#adcbda",
+                    "tertiary-fixed-dim": "#44d8f1",
+                    "on-tertiary-fixed": "#001f25",
+                    "on-error-container": "#93000a",
+                    "outline": "#717786",
+                    "surface-container-highest": "#e1e3e4",
+                    "tertiary": "#006673",
+                    "surface-container": "#edeeef",
+                    "on-tertiary": "#ffffff",
+                    "surface-variant": "#e1e3e4",
+                    "tertiary-fixed": "#a1efff",
+                    "secondary-container": "#c6e4f4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .headline { font-family: 'Manrope', sans-serif; }
+        .zen-field:focus-within { border-bottom: 2px solid #005ab5; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-auto right-0 top-0 bg-slate-50 dark:bg-slate-900 flex flex-col border-l dark:border-slate-800 z-50">
+<div class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white px-6 py-8">Zenfine</div>
+<div class="px-6 pb-4">
+<span class="text-xs font-semibold text-slate-400 tracking-widest uppercase">Management Console</span>
+</div>
+<nav class="flex-1 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-6 py-4 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="Manrope display text-sm font-semibold">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-4 text-blue-700 dark:text-blue-300 bg-white dark:bg-slate-800 rounded-r-none border-l-4 border-blue-600" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="Manrope display text-sm font-semibold">Invoices</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-4 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="Manrope display text-sm font-semibold">Customers</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-4 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="Manrope display text-sm font-semibold">Settings</span>
+</a>
+</nav>
+<div class="mt-auto border-t dark:border-slate-800">
+<button class="w-full flex items-center gap-3 px-6 py-4 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="Manrope display text-sm font-semibold">Logout</span>
+</button>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="h-16 w-full sticky top-0 z-40 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-100 dark:border-slate-800 flex justify-between items-center px-8 mr-64">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md focus-within:ring-2 focus-within:ring-blue-100 rounded-lg transition-all">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-400" data-icon="search">search</span>
+<input class="w-full bg-slate-100 border-none rounded-lg py-2 pr-10 pl-4 text-sm focus:ring-0" placeholder="البحث عن فواتير أو عملاء..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-slate-600 dark:text-slate-400 hover:text-blue-500 transition-all">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-slate-600 dark:text-slate-400 hover:text-blue-500 transition-all">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-blue-100 overflow-hidden">
+<img alt="Admin User Avatar" class="w-full h-full object-cover" data-alt="portrait of a professional business administrator in a modern office setting with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjHqLkNM44eUv2NZLBTAJoPANORelHZ4hRKNZdhBrw3WOC36-ut_4KaD1_o29-VB0Egy--JWO3f9N7jAbeFy7WAYmcHmLyGbXFZpHq7RUYOBpHTB1-7b3NuhcTiXvevp4a6MKUVEz9N2hfwVe5y-x5-4steDW4zP2FKtVt98dSB8npDKls1cPDVQUVdlnr9st0qjIHoCp-TGIwldu545MVnYRPoCjIMvyvk3ZCN4qMUSMDBUZesBcWhc6mJynKsWkxXJsMjYMilNw"/>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="mr-64 p-12 min-h-screen">
+<div class="max-w-5xl mx-auto">
+<!-- Breadcrumbs & Title -->
+<div class="mb-12">
+<nav class="flex gap-2 text-on-surface-variant text-sm mb-4">
+<span>الفواتير</span>
+<span class="material-symbols-outlined text-xs" data-icon="chevron_left">chevron_left</span>
+<span class="text-primary font-medium">إنشاء فاتورة جديدة</span>
+</nav>
+<h1 class="text-4xl font-extrabold tracking-tight text-on-surface">إنشاء فاتورة جديدة</h1>
+<p class="text-on-surface-variant mt-2 text-lg">قم بتعبئة تفاصيل الخدمة والعميل لإصدار فاتورة احترافية.</p>
+</div>
+<!-- Asymmetric Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Main Form Column -->
+<div class="lg:col-span-8">
+<div class="bg-surface-container-lowest rounded-xl shadow-[0px_24px_48px_rgba(0,27,62,0.04)] p-10">
+<form class="space-y-10">
+<!-- Customer Details Section -->
+<section>
+<h2 class="text-xl font-bold text-on-surface mb-8 flex items-center gap-2">
+<span class="w-8 h-8 rounded-full bg-primary-fixed text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-sm" data-icon="person">person</span>
+</span>
+                                    بيانات العميل
+                                </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-on-surface-variant px-1">اسم الزبون</label>
+<input class="zen-field bg-transparent border-0 border-b-2 border-outline-variant/20 py-3 px-1 focus:ring-0 text-on-surface transition-all placeholder:text-slate-300" placeholder="أدخل اسم العميل بالكامل" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-on-surface-variant px-1">البريد الإلكتروني</label>
+<input class="zen-field bg-transparent border-0 border-b-2 border-outline-variant/20 py-3 px-1 focus:ring-0 text-on-surface transition-all placeholder:text-slate-300 text-left" dir="ltr" placeholder="example@domain.com" type="email"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-on-surface-variant px-1">رقم الهاتف</label>
+<input class="zen-field bg-transparent border-0 border-b-2 border-outline-variant/20 py-3 px-1 focus:ring-0 text-on-surface transition-all placeholder:text-slate-300 text-left" dir="ltr" placeholder="+966 5X XXX XXXX" type="tel"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-on-surface-variant px-1">العنوان</label>
+<input class="zen-field bg-transparent border-0 border-b-2 border-outline-variant/20 py-3 px-1 focus:ring-0 text-on-surface transition-all placeholder:text-slate-300" placeholder="شارع، حي، مدينة" type="text"/>
+</div>
+</div>
+</section>
+<!-- Service Details Section -->
+<section class="pt-6">
+<h2 class="text-xl font-bold text-on-surface mb-8 flex items-center gap-2">
+<span class="w-8 h-8 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-sm" data-icon="cleaning_services">cleaning_services</span>
+</span>
+                                    تفاصيل الخدمة
+                                </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-on-surface-variant px-1">نوع العمل</label>
+<select class="zen-field bg-transparent border-0 border-b-2 border-outline-variant/20 py-3 px-1 focus:ring-0 text-on-surface appearance-none">
+<option>تنظيف منزلي (Home Cleaning)</option>
+<option>تنظيف سجاد (Carpet)</option>
+<option>تنظيف نوافذ (Windows)</option>
+<option>تنظيف عميق (Deep Clean)</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-on-surface-variant px-1">التاريخ</label>
+<input class="zen-field bg-transparent border-0 border-b-2 border-outline-variant/20 py-3 px-1 focus:ring-0 text-on-surface" type="date"/>
+</div>
+<div class="flex flex-col gap-2 md:col-span-2">
+<label class="text-sm font-semibold text-on-surface-variant px-1">التكلفة الإجمالية</label>
+<div class="relative">
+<input class="zen-field w-full bg-transparent border-0 border-b-2 border-outline-variant/20 py-3 pl-12 pr-1 focus:ring-0 text-on-surface text-2xl font-bold" placeholder="0.00" type="number"/>
+<span class="absolute left-0 bottom-4 text-on-surface-variant font-medium">ريال سعودي</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer Actions -->
+<div class="pt-8 flex justify-end gap-4 border-t border-slate-50">
+<button class="px-8 py-3 rounded-xl text-on-surface-variant font-semibold hover:bg-surface-container-low transition-all" type="button">إلغاء</button>
+<button class="px-12 py-4 bg-gradient-to-br from-primary to-primary-container text-white font-bold rounded-xl shadow-[0px_12px_24px_rgba(0,90,181,0.2)] hover:-translate-y-1 transition-all flex items-center gap-2" type="submit">
+<span>حفظ الفاتورة</span>
+<span class="material-symbols-outlined rotate-180" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Side Helper / Preview Column -->
+<div class="lg:col-span-4 space-y-6">
+<div class="bg-primary/5 rounded-xl p-8 border border-primary/10">
+<h3 class="font-bold text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="lightbulb">lightbulb</span>
+                            نصيحة سريعة
+                        </h3>
+<p class="text-sm leading-relaxed text-on-surface-variant">
+                            تأكد من مراجعة تفاصيل التكلفة والضريبة قبل الحفظ. سيتم إرسال نسخة من الفاتورة تلقائياً إلى البريد الإلكتروني للعميل فور الحفظ.
+                        </p>
+</div>
+<!-- Cleanliness Meter (Contextual Progress) -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm">
+<div class="flex justify-between items-center mb-4">
+<span class="text-sm font-bold text-on-surface">اكتمال البيانات</span>
+<span class="text-xs text-tertiary font-bold">75%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full w-3/4 rounded-full"></div>
+</div>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-[10px] font-bold">بيانات العميل ✓</span>
+<span class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-[10px] font-bold">التكلفة ✓</span>
+<span class="px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant text-[10px] font-bold">المرفقات</span>
+</div>
+</div>
+<!-- Decorative Branding Image -->
+<div class="relative h-64 rounded-xl overflow-hidden group">
+<img alt="Professional cleaning equipment" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="high-end minimalist cleaning equipment and fresh linens arranged on a bright surface with soft blue aesthetic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDU_Zm-0RImch8LfzZKWSVxkdp-bp2Kmb_f9DdK4OPZaEW_jvtyp1NVL96o7VFxmXRB9XIatxX2ge1GvWtHIHJSG4eiR_4WT2_CMn1z4aktEeys2M2B2Qd8MEPciBU_MTaJJ2hZRExO2dun7mgwwLFpCa0LADjfAz3Rxg6zpxDJrr66XQhc3BZdU9j8mf1BqGtj0BZiBv3GEg6aqXxJq28Vh1eJ6KOmo_TCkSqkkDjBhRP2tNMMjgTTNv84LmnuY4-nR6bTQKASk40"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent flex items-end p-6">
+<p class="text-white text-sm font-bold">نحن نجعل مساحات عملك تتنفس النقاء والهدوء.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>
