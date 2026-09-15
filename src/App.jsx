@@ -159,7 +159,7 @@ function App() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    type: "Web Application",
+
     message: "",
   });
 
@@ -190,7 +190,7 @@ function App() {
         setFormData({
           name: "",
           email: "",
-          type: "Web Application",
+
           message: "",
         });
         setTimeout(() => setStatus("idle"), 5000);
@@ -584,22 +584,6 @@ function App() {
                   onChange={handleChange}
                   required
                 />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="type">Project Type</label>
-                <select
-                  id="type"
-                  name="type"
-                  value={formData.type}
-                  onChange={handleChange}
-                >
-                  <option>Web Application</option>
-                  <option>E-Commerce</option>
-                  <option>REST API</option>
-                  <option>Dashboard</option>
-                  <option>Other</option>
-                </select>
               </div>
 
               <div className="form-group">
