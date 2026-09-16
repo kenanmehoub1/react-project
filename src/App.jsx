@@ -14,6 +14,7 @@ import { useState } from "react";
 import "./App.css";
 import project1 from "./assets/project1.png";
 import project2 from "./assets/project2.png";
+import project3 from "./assets/project3.png";
 
 /* =========================================================
    BRAND ICONS
@@ -131,21 +132,34 @@ const socialLinks = {
 const projects = [
   {
     id: 1,
-    title: "TaskFlow",
+    title: "zenfine for property care",
     description:
-      "A modern task management platform with team collaboration, real-time updates and a clean interface.",
+      "A website for a cleaning company in Dubai with an invoice management system.",
     image: project1,
     tags: ["Laravel", "Blade", "MySQL", "Tailwind"],
     liveUrl: "https://www.zenfine1.com",
   },
   {
     id: 2,
-    title: "E-Commerce Platform",
+    title: " RealEstate",
     description:
-      "A fully featured e-commerce platform with secure payments, user accounts and admin dashboard.",
+      "A ready-made website for real estate companies with a simple dashboard to add new properties. ",
     image: project2,
     tags: ["Laravel", "Blade", "Filament", "MySQL"],
     liveUrl: "https://violet-chamois-504658.hostingersite.com",
+  },
+  {
+    id: 3,
+    title: " Dashboard for RealEstate",
+    description: `
+
+The dashboard is built using Laravel Filament to add new properties to the real estate website. You can log in and try it using the following credentials:
+
+Email: admin@gmail.com
+Password: admin`,
+    image: project3,
+    tags: ["Laravel", "Blade", "Filament", "MySQL"],
+    liveUrl: "https://violet-chamois-504658.hostingersite.com/admin/login",
   },
 ];
 
