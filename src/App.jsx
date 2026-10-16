@@ -15,6 +15,7 @@ import "./App.css";
 import project1 from "./assets/project1.png";
 import project2 from "./assets/project2.png";
 import project3 from "./assets/project3.png";
+import project4 from "./assets/project4.png";
 
 /* =========================================================
    BRAND ICONS
@@ -160,6 +161,18 @@ Password: admin`,
     image: project3,
     tags: ["Laravel", "Blade", "Filament", "MySQL"],
     liveUrl: "https://violet-chamois-504658.hostingersite.com/admin/login",
+  },
+  {
+    id: 4,
+    title: "Pharmacy Management System (SaaS)",
+    description: `A multi-tenant SaaS platform for pharmacy management with inventory control, sales tracking, expiry monitoring, and a powerful admin dashboard.
+
+You can log in and try it using the following credentials:
+Email: admin@gmail.com
+Password: admin`,
+    image: project4,
+    tags: ["Laravel", "Filament", "MySQL", "SaaS"],
+    liveUrl: "https://greenyellow-hawk-777430.hostingersite.com/admin",
   },
 ];
 
